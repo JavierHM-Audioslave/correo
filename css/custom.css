@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(to right, #185a9d 0%, #43cea2 100%);
+    color: black;
+    line-height: 1.5;
+}
+
+#container {
+    margin: 3vw;
+    background-color: white;
+}
+
+header {
+    text-align: center;
+    padding: 1vw;
+    /* border: 1px solid red; */
+    background-color: rgba(151,38,109);
+}
+
+form {
+   margin: 2vw 30vw;
+   padding: 1vw;
+   /* border: 1px solid red; */
+}
+
+.wrapper {
+    /* margin-top: 7vh; */
+    margin-top: 4vw;
+}
+
+label, input {
+    display: block;
+    font-size: 1.3vw;
+}
+
+input {
+    background-color: rgba(247,250,252);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input, button {
+    height: 3vw;
+    font-size: 1vw;
+    padding: .1vw 1vw;
+}
+
+.estiloParrafo {
+    color: red;
+    display: none;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+#mensaje {
+    resize: vertical;
+    height: 5vw;
+    overflow: auto;
+    width: 100%;
+    padding: 1vw 1vw;
+    box-sizing: border-box;
+    font-size: 1vw;
+    background-color: rgba(247,250,252);
+}
+
+#flex {
+    margin: 2.5vw 0 1.5vw 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    text-align: center;
+}
+
+#flex button {
+    flex: 1 1 250px;
+    color: white;
+}
+
+#enviar {
+    margin-right: .5vw;
+    background-color: rgba(49,130,206,0.3);
+    cursor: not-allowed;
+}
+
+#resetear {
+    background-color: rgba(56,161,105,1);
+}

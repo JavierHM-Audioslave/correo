@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/customForMobile.css" media="(max-width: 800px)">
+    <title>Correo</title>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>Enviar Nuevo Mail</h1>
+        </header>
+        <form action="#">
+            <div class="wrapper" id="envolvedorDeCorreo">
+                <label for="email">Para:</label>
+                <input id="email" type="text">
+                <p class="estiloParrafo">FORMATO INCORRECTO: ingrese una dirreción de correo válida</p>
+            </div>
+           <div class="wrapper"> 
+                <label for="asunto">Asunto:</label>
+                <input id="asunto" type="text">
+           </div>
+            <div class="wrapper">
+                <label for="mensaje">Mensaje:</label>
+                <textarea name="mensajeTA" id="mensaje" cols="30" rows="10"></textarea>
+            </div>
+            <div id="flex">
+                <button id="enviar" type="submit" disabled="true">ENVIAR</button>
+                <button id="resetear" type="submit">RESETEAR FORM</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
