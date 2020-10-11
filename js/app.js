@@ -3,6 +3,7 @@ const elemInputAsunto = document.querySelector("#asunto");
 const elemTextarea = document.querySelector("textarea");
 const elemBotonEnviar = document.querySelector("#enviar");
 const elemBotonResetear = document.querySelector("#resetear");
+const elemForm = document.querySelector("form");
 let mailOK = false;
 let asuntoOK = false;
 let mensajeOK = false;
@@ -15,6 +16,7 @@ function registrarEventos() {
     elemInputAsunto.addEventListener('change', chequearContenidoDeAsunto);
     elemTextarea.addEventListener('change', chequearContenidoDeMensaje);
     elemBotonResetear.addEventListener("click", limpiarContenidos);
+    elemForm.addEventListener("submit", enviarMail);
 }
 
 
@@ -22,14 +24,12 @@ function registrarEventos() {
 // FEATURE: función que permite chequear el contenido del mail. //
 function chequearContenidoDeEmail(e) {
     const parrafoAdvertenciaCorreo = document.querySelector("#envolvedorDeCorreo p");
-    const valorAtributoDisplay = parrafoAdvertenciaCorreo.style.display;
-    if( valorAtributoDisplay === "" || valorAtributoDisplay === "none") {
-        if( e.target.value.indexOf("@") < 0 ) {
-            parrafoAdvertenciaCorreo.style.display = "block";
-            mailOK = false;
-            deshabilitarSubmit();            
-        }
-    }else {
+
+    if( e.target.value.indexOf("@") < 0 ) {
+        parrafoAdvertenciaCorreo.style.display = "block";
+        mailOK = false;
+        deshabilitarSubmit();            
+    } else {
         if( e.target.value.indexOf("@") >= 0 ) {
             parrafoAdvertenciaCorreo.style.display = "none";
             mailOK = true;
@@ -94,7 +94,9 @@ function chequearContenidoDeMensaje(e) {
 function chequearHabilitacionDeSubmit() {
     if( mailOK === true && asuntoOK === true && mensajeOK === true ) {
         elemBotonEnviar.disabled = false;
+        elemBotonEnviar.style.transition = "background-color 4s";
         elemBotonEnviar.style.backgroundColor = "rgba(49,130,206,1)";
+        document.querySelector("#enviar").style.cursor = "default";
     }
 }
 /***************************************************************************/
@@ -107,5 +109,18 @@ function chequearHabilitacionDeSubmit() {
 function deshabilitarSubmit() {
     elemBotonEnviar.disabled = true;
     elemBotonEnviar.style.backgroundColor = "rgba(49,130,206,0.3)";
+    document.querySelector("#enviar").style.cursor = "not-allowed";
+
 }
 /***************************************************************************/
+
+
+
+
+function enviarMail(e) {
+    console.log("Hdp");
+    e.preventDefault;
+    const elemSpinner = document.querySelector("#spinner");
+    elemSpinner.style.display = "block";
+    setTimeout( e => elemSpinner.style.display = "none", 5000);
+}
