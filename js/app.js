@@ -124,8 +124,6 @@ function enviarMail(e) {
     e.preventDefault;
     const elemSpinner = document.querySelector("#spinner");
     elemSpinner.style.display = "block";
-    setTimeout( e => {
-        elemSpinner.style.display = "none";
-    }, 4000);
+    setTimeout( e => elemSpinner.style.display = "none", 4000);
 }
 /***************************************************************************/
