@@ -3,7 +3,8 @@ const elemInputAsunto = document.querySelector("#asunto");
 const elemTextarea = document.querySelector("textarea");
 const elemBotonEnviar = document.querySelector("#enviar");
 const elemBotonResetear = document.querySelector("#resetear");
-const elemForm = document.querySelector("form");
+// const elemForm = document.querySelector("form");
+const elemEnviar = document.querySelector("#enviar");
 let mailOK = false;
 let asuntoOK = false;
 let mensajeOK = false;
@@ -16,7 +17,8 @@ function registrarEventos() {
     elemInputAsunto.addEventListener('change', chequearContenidoDeAsunto);
     elemTextarea.addEventListener('change', chequearContenidoDeMensaje);
     elemBotonResetear.addEventListener("click", limpiarContenidos);
-    elemForm.addEventListener("submit", enviarMail);
+    // elemForm.addEventListener("submit", enviarMail); // Lo eliminé porque tengo dos submit en el form. //
+    elemEnviar.addEventListener("click", enviarMail);
 }
 
 
@@ -110,7 +112,6 @@ function deshabilitarSubmit() {
     elemBotonEnviar.disabled = true;
     elemBotonEnviar.style.backgroundColor = "rgba(49,130,206,0.3)";
     document.querySelector("#enviar").style.cursor = "not-allowed";
-
 }
 /***************************************************************************/
 
@@ -123,6 +124,8 @@ function enviarMail(e) {
     e.preventDefault;
     const elemSpinner = document.querySelector("#spinner");
     elemSpinner.style.display = "block";
-    setTimeout( e => elemSpinner.style.display = "none", 5000);
+    setTimeout( e => {
+        elemSpinner.style.display = "none";
+    }, 4000);
 }
 /***************************************************************************/
