@@ -117,9 +117,12 @@ function deshabilitarSubmit() {
 
 
 
+/***************************************************************************/
+// FEATURE: función que permite mostrar el spinner de carga al submitear el formulario para dar apariencia de estar enviando el correo. //
 function enviarMail(e) {
     e.preventDefault;
     const elemSpinner = document.querySelector("#spinner");
     elemSpinner.style.display = "block";
     setTimeout( e => elemSpinner.style.display = "none", 5000);
 }
+/***************************************************************************/
