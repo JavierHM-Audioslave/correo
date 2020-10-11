@@ -118,7 +118,6 @@ function deshabilitarSubmit() {
 
 
 function enviarMail(e) {
-    console.log("Hdp");
     e.preventDefault;
     const elemSpinner = document.querySelector("#spinner");
     elemSpinner.style.display = "block";
